@@ -3,7 +3,7 @@ FROM golang:alpine AS builder
 WORKDIR /root
 
 RUN apk update && apk add git \
-    && git clone https://github.com/iyear/E5SubBot.git \
+    && git clone https://github.com/jzl1/E5SubBot.git \
     && cd E5SubBot && go build
 
 FROM alpine:latest
@@ -16,7 +16,6 @@ RUN apk update && apk add tzdata \
 WORKDIR /root
 
 COPY --from=builder /root/E5SubBot/main /app
-COPY --from=builder /root/E5SubBot/config.yml.example /app
-RUN mv config.yml.example config.yml
+COPY --from=builder /root/E5SubBot/config.yml /app
 
 CMD [ "/app/main" ]
