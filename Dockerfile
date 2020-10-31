@@ -15,6 +15,8 @@ RUN apk update && apk add tzdata \
 
 WORKDIR /root
 
-COPY --from=builder /root/E5SubBot/main /root
+COPY --from=builder /root/E5SubBot/main /app
+COPY --from=builder /root/E5SubBot/config.yml.example /app
+RUN mv config.yml.example config.yml
 
-CMD [ "/root/main" ]
+CMD [ "/app/main" ]
