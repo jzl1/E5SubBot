@@ -11,5 +11,5 @@ mysql:
   port: $SQLPORT
   user: $SQLUSER
   password: $SQLPWD
-  database: $SQLDB" >> /app/config.yml
-/app/main
+  database: $SQLDB" >> ./config.yml
+./main
