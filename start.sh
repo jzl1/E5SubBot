@@ -12,4 +12,4 @@ mysql:
   user: $SQLUSER
   password: $SQLPWD
   database: $SQLDB" >> /app/config.yml
-/bin/ash -c /app/main
+/app/main
