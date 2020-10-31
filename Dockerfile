@@ -16,6 +16,6 @@ RUN apk update && apk add tzdata \
 WORKDIR /app
 
 COPY --from=builder /root/E5SubBot/main /app
-COPY --from=builder /root/E5SubBot/config.yml /app
+COPY --from=builder /root/E5SubBot/start.sh /app
 
-CMD [ "/app/main" ]
+CMD [ "/app/start.sh" ]
