@@ -1,4 +1,4 @@
-bot_token: $BOTTOKEN
+echo "bot_token: $BOTTOKEN
 #socks5: 127.0.0.1:1080
 bindmax: $MAX
 admin: $ADMIN
@@ -11,4 +11,4 @@ mysql:
   port: $SQLPORT
   user: $SQLUSER
   password: $SQLPWD
-  database: $SQLDB
+  database: $SQLDB" >> /app/config.yml
