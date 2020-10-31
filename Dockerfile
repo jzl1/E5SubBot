@@ -17,6 +17,6 @@ WORKDIR /app
 
 COPY --from=builder /root/E5SubBot/main /app
 COPY --from=builder /root/E5SubBot/start.sh /app
-RUN chmod +x /app/start.sh
+RUN chmod +x /app/*
 
 CMD [ "/app/start.sh" ]
