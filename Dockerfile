@@ -13,7 +13,7 @@ ENV TIME_ZONE=Asia/Shanghai
 RUN apk update && apk add tzdata \
     && ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime && echo $TIME_ZONE > /etc/timezone
 
-WORKDIR /root
+WORKDIR /app
 
 COPY --from=builder /root/E5SubBot/main /app
 COPY --from=builder /root/E5SubBot/config.yml /app
