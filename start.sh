@@ -4,7 +4,7 @@ bindmax: $MAX
 admin: $ADMIN
 errlimit: 5
 notice: "aaa\nbbb"
-cron: "1 */3 * * *"
+cron: "$CRON"
 #docker部署默认无需修改mysql配置
 mysql:
   host: $SQLHOST
