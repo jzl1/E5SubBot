@@ -1,6 +1,6 @@
 FROM golang:alpine AS builder
 
-WORKDIR /root
+WORKDIR /app
 
 RUN apk update && apk add git \
     && git clone https://github.com/jzl1/E5SubBot.git \
@@ -15,8 +15,8 @@ RUN apk update && apk add tzdata \
 
 WORKDIR /app
 
-COPY --from=builder /root/E5SubBot/main /app
-COPY --from=builder /root/E5SubBot/start.sh /app
+COPY --from=builder /app/E5SubBot/main /app
+COPY --from=builder /app/E5SubBot/start.sh /app
 RUN chmod +x /app/*
 
 CMD [ "/app/start.sh" ]
